@@ -9,16 +9,20 @@ function Navbar({ currentPage, setCurrentPage }) {
     <nav className="bg-blue-600 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo/Brand */}
+          {/* Logo/Brand in top-left */}
           <div className="flex-shrink-0">
-            <h1 className="text-white text-xl font-bold cursor-pointer" onClick={() => handleNavClick('home')}>
-              Document AI
+            <h1 className="cursor-pointer" onClick={() => handleNavClick('home')}>
+              <img 
+                src="https://swasthx.com/assets/Swasthx_White-25caeae3.webp" 
+                alt="SwasthX" 
+                className='h-48 w-auto'
+              />
             </h1>
           </div>
           
           {/* Navigation Menu */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="flex items-baseline space-x-4">
               <button
                 onClick={() => handleNavClick('home')}
                 className={`px-3 py-2 rounded-md text-sm font-medium transition duration-150 ease-in-out ${
@@ -47,4 +51,4 @@ function Navbar({ currentPage, setCurrentPage }) {
   )
 }
 
-export default Navbar 
+export default Navbar

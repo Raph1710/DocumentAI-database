@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Document = require('./models/Document');
+require('dotenv').config();
 
 // Sample data to insert
 const sampleDocuments = [
@@ -96,8 +97,8 @@ const sampleDocuments = [
 // Connect to MongoDB and seed data
 const seedDatabase = async () => {
   try {
-    // Connect to MongoDB
-    await mongoose.connect('mongodb://localhost:27017/documentai');
+    // Connect to MongoDB using MONGO_URI from .env
+    await mongoose.connect(process.env.MONGO_URI);
     console.log('Connected to MongoDB for seeding data...');
 
     // Clear existing data

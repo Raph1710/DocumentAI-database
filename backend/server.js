@@ -23,7 +23,7 @@ app.use('/api/documents', documentRoutes);
 app.get('/', (req, res) => {
   res.json({ message: 'Document AI Backend API' });
 });
-
+app.send('Welcome to the Document AI Backend API');
 // Start server
 app.listen(PORT, () => {
   console.log(`Server is running at http://localhost:${PORT}`);

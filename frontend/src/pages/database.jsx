@@ -15,7 +15,7 @@ function Database() {
     try {
       setLoading(true);
       setError(null); // Clear any previous errors
-      const response = await fetch('http://localhost:5000/api/documents');
+      const response = await fetch('https://documentai-database.onrender.com/api/documents');
       if (!response.ok) {
         throw new Error('Failed to fetch documents');
       }
@@ -47,7 +47,7 @@ function Database() {
 
   const handleViewDocument = async (executionId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/documents/${executionId}`);
+      const response = await fetch(`https://documentai-database.onrender.com/api/documents/${executionId}`);
       if (!response.ok) {
         throw new Error('Failed to fetch document details');
       }

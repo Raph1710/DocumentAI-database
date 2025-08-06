@@ -30,8 +30,8 @@ function Home() {
           </h2>
           
           <div className="relative">
-            {/* Connecting Lines */}
-            <div className="absolute top-1/2 left-0 right-0 h-1 bg-blue-200 transform -translate-y-1/2 z-0"></div>
+            {/* Connecting Lines - Connect from edge to edge */}
+            <div className="absolute w-3/4 h-1 bg-blue-500 left-1/2 top-[30%] transform -translate-x-1/2 z-0"></div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center relative z-10">
               {/* Step 1: Store */}
@@ -62,7 +62,7 @@ function Home() {
                 <div className="bg-blue-50 rounded-full w-48 h-48 mx-auto mb-8 flex items-center justify-center relative">
                   {/* Processing Animation with Medical Documents */}
                   <div className="relative">
-                    <div className="w-32 h-32 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                    <div className="w-48 h-48 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="text-blue-600 text-5xl">📋</div>
                     </div>

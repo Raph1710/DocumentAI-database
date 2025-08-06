@@ -97,14 +97,14 @@ function Home() {
           
           <div className="relative">
             {/* Connecting Lines - Connect from edge to edge */}
-            <div className="absolute w-3/4 h-1 bg-blue-500 left-1/2 top-[30%] transform -translate-x-1/2 z-0"></div>
+            <div className="absolute w-3/4 h-1 bg-blue-500 left-1/2 top-[40%] transform -translate-x-1/2 z-0"></div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center relative z-10">
               {/* Step 1: Store */}
               <div className="text-center relative">
-                <div className="bg-blue-50 rounded-full w-48 h-48 mx-auto mb-8 flex items-center justify-center relative">
+                <div className="bg-blue-50 rounded-full w-80 h-80 mx-auto mb-8 flex items-center justify-center relative">
                   {/* Medical Data Source Icons */}
-                  <div className="grid grid-cols-3 gap-3 w-28 h-28">
+                  <div className="grid grid-cols-3 gap-3 w-48 h-48">
                     <div className="bg-green-500 rounded-lg text-white text-sm flex items-center justify-center">💬</div>
                     <div className="bg-red-500 rounded-lg text-white text-sm flex items-center justify-center">❤️</div>
                     <div className="bg-orange-500 rounded-lg text-white text-sm flex items-center justify-center">📁</div>
@@ -125,45 +125,68 @@ function Home() {
 
               {/* Step 2: Process */}
               <div className="text-center relative">
-                <div className="bg-blue-50 rounded-full w-48 h-48 mx-auto mb-8 flex items-center justify-center relative">
-                  {/* Processing Animation with Medical Documents */}
-                  <div className="relative">
-                    <div className="w-48 h-48 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="text-blue-600 text-5xl">📋</div>
-                    </div>
+  <div className="bg-blue-50 rounded-full w-80 h-80 mx-auto mb-8 flex items-center justify-center relative">
+
+    {/* Spinning circle with arrows */}
+    <div className="w-80 h-80 relative animate-spin-slow">
+      {/* Blue circular border */}
+      <div className="absolute inset-0 border-4 border-blue-500 rounded-full"></div>
+
+      {/* Arrow 1 (top) */}
+      <div className="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-1/2 text-blue-500 text-lg">
+        ➡️
+      </div>
+
+      {/* Arrow 2 (bottom right) */}
+      <div
+      className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 text-blue-500 text-lg rotate-180">
+      ➡️
+    </div>
+    </div>
+
+    {/* 📋 Clipboard icon (NOT spinning) */}
+    <div className="absolute inset-0 flex items-center justify-center">
+      <div className="text-blue-600 text-5xl">📋</div>
+    </div>
+
+  </div>
+
+  <h3 className="text-2xl font-bold text-gray-900 mb-4">We Do The Work</h3>
+  <p className="text-gray-600 leading-relaxed">
+    Let our technology seamlessly manage backend tasks for efficient medical record organization.
+  </p>
+</div>
+
+              {/* Step 3: Phone scroll animation */}
+            <div className="flex flex-col justify-center items-center min-h-screen space-y-4">
+              {/* Smaller Phone Frame */}
+              <div className="relative w-[170px] h-[350px] bg-gray-900 rounded-[1.5rem] p-1.5 shadow-xl">
+                {/* Screen */}
+                <div className="w-full h-full bg-black rounded-[1.2rem] overflow-hidden relative">
+                  {/* Optional notch */}
+                  <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-10 h-1.5 bg-gray-800 rounded-full z-10" />
+
+                  {/* Auto-scrolling content */}
+                  <div className="w-full h-full relative">
+                    <img
+                      src="https://swasthx.com/assets/all_records-e4d1f7a7.webp"
+                      alt="Scrolling content"
+                      className="absolute top-0 left-0 w-full h-auto animate-scroll-image"
+                    />
                   </div>
                 </div>
-                
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">We Do The Work</h3>
+              </div>
+
+              {/* Text Below Phone */}
+              <div className="text-center max-w-xs -translate-y-30">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">We Do The Work</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Let our technology seamlessly manage backend tasks for efficient medical record organization.
                 </p>
               </div>
+            </div>
 
-              {/* Step 3: Timeline */}
-              <div className="text-center relative">
-                <div className="bg-blue-50 rounded-full w-48 h-48 mx-auto mb-8 flex items-center justify-center relative">
-                  {/* Mobile Device with Medical Timeline */}
-                  <div className="w-20 h-28 bg-gray-800 rounded-lg p-1">
-                    <div className="w-full h-full bg-white rounded-md p-2">
-                      {/* Timeline Content */}
-                      <div className="space-y-2">
-                        <div className="text-xs text-gray-600 font-bold text-center">2023</div>
-                        <div className="w-full h-2 bg-blue-300 rounded"></div>
-                        <div className="w-3/4 h-2 bg-green-300 rounded"></div>
-                        <div className="w-1/2 h-2 bg-yellow-300 rounded"></div>
-                        <div className="text-xs text-gray-500 text-center">📊</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Get Timeline</h3>
-                <p className="text-gray-600 leading-relaxed">
-                  Organize your medical records effortlessly with our timeline, ensuring you never worry about them again. Streamline your health journey with ease.
-                </p>
-              </div>
+                  
             </div>
           </div>
         </div>

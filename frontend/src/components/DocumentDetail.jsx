@@ -30,7 +30,7 @@ function DocumentDetail({ document, onClose, onStatusUpdate }) {
 
   const handleStatusUpdate = async (newStatus) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/documents/${document.executionId}`, {
+      const response = await fetch(`https://documentai-database.onrender.com/api/documents/${document.executionId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -69,14 +69,14 @@ function DocumentDetail({ document, onClose, onStatusUpdate }) {
     handleStatusUpdate('In Review');
   };
 
-  const handleDownloadDocument = () => {
+  const handlePending = () => {
     handleStatusUpdate('Pending');
   };
 
   const handleDeleteDocument = async () => {
     if (window.confirm('Are you sure you want to delete this document?')) {
       try {
-        const response = await fetch(`http://localhost:5000/api/documents/${document.executionId}`, {
+        const response = await fetch(`https://documentai-database.onrender.com/api/documents/${document.executionId}`, {
           method: 'DELETE',
         });
 
@@ -208,10 +208,10 @@ function DocumentDetail({ document, onClose, onStatusUpdate }) {
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Actions</h3>
             <div className="flex flex-wrap gap-3">
               <button 
-                onClick={handleDownloadDocument}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium"
+                onClick={handlePending}
+                className="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-lg font-medium"
               >
-                Download Document
+                Mark as Pending
               </button>
               <button 
                 onClick={handleApproveDocument}
